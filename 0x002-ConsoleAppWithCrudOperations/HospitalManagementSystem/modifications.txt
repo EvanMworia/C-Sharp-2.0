@@ -1,0 +1,4 @@
+ // APPOINTMENTS
+
+ Appointment entity should contain a subject field, instead of creating it with ID,
+ just pass in the subject of your appointment and the ID will be generated for us in the db
