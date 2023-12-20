@@ -9,6 +9,6 @@ namespace Auth_Service.Data
     {
         public DataContext(DbContextOptions<DataContext> option):base(option) { }
 
-        DbSet<BlogUser> Users {  get; set; }
+        public DbSet<BlogUser> Users {  get; set; }
     }
 }

@@ -24,6 +24,10 @@ builder.Services.AddDbContext<DataContext>(options =>
 //configure identity framework
 builder.Services.AddIdentity<BlogUser, IdentityRole>().AddEntityFrameworkStores<DataContext>();
 
+
+
+
+
 //Add AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
