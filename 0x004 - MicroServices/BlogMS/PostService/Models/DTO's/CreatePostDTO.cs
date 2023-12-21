@@ -1,5 +1,5 @@
 ﻿using Auth_Service.Models.DTOs;
-using System.ComponentModel.DataAnnotations;
+
 
 namespace PostService.Models.DTO_s
 {
