@@ -11,7 +11,7 @@ namespace Auth_Service.Profiles
         public AuthProfiles()
         {
             CreateMap<RegisterUserDto, BlogUser>();
-            CreateMap<ResponseForRegisteredUserDto, BlogUser>().ReverseMap();
+            CreateMap<UserDeets, BlogUser>().ReverseMap();
            
         }
     }

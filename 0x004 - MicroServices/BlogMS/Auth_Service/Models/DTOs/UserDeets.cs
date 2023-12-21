@@ -2,7 +2,7 @@
 
 namespace Auth_Service.Models.DTOs
 {
-    public class ResponseForRegisteredUserDto
+    public class UserDeets
     {
         public Guid Id { get; set; }
         public string UserName { get; set; } = string.Empty;

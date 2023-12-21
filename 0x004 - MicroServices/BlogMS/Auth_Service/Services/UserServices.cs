@@ -32,7 +32,7 @@ namespace Auth_Service.Services
                 return new LoginResponseDto();
             }
 
-            var mappedUser = _mapper.Map<ResponseForRegisteredUserDto>(user);
+            var mappedUser = _mapper.Map<UserDeets>(user);
             
             var response = new LoginResponseDto()
             {

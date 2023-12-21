@@ -4,6 +4,6 @@
     {
         public string Token { get; set; } = string.Empty;
 
-        public ResponseForRegisteredUserDto user { get; set; } = default!;
+        public UserDeets user { get; set; } = default!;
     }
 }

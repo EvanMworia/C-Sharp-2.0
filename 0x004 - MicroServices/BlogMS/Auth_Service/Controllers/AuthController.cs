@@ -21,7 +21,7 @@ namespace Auth_Service.Controllers
 
         }
         [HttpPost]
-        public async Task<ActionResult<ResponseForRegisteredUserDto>> RegisterUser(RegisterUserDto registerUser)
+        public async Task<ActionResult<UserDeets>> RegisterUser(RegisterUserDto registerUser)
         {
             var result = await _userService.RegisterUser(registerUser);
             if (string.IsNullOrWhiteSpace(result))
