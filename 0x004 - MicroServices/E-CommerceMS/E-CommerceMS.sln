@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34310.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth_Service", "Auth_Service\Auth_Service.csproj", "{82A70C7C-0D3C-43B2-8724-5F903C4E16E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth_Service", "Auth_Service\Auth_Service.csproj", "{82A70C7C-0D3C-43B2-8724-5F903C4E16E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService", "ProductService\ProductService.csproj", "{4337830D-AA87-4255-AC61-6D8432D795EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartService", "CartService\CartService.csproj", "{8787D566-A794-444B-A605-696D34765888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderService\OrderService.csproj", "{9C1300AB-9585-4F97-B93F-40F69E06D8ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouponService", "CouponService\CouponService.csproj", "{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RewardsService", "RewardsService\RewardsService.csproj", "{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +27,30 @@ Global
 		{82A70C7C-0D3C-43B2-8724-5F903C4E16E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A70C7C-0D3C-43B2-8724-5F903C4E16E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A70C7C-0D3C-43B2-8724-5F903C4E16E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4337830D-AA87-4255-AC61-6D8432D795EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4337830D-AA87-4255-AC61-6D8432D795EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4337830D-AA87-4255-AC61-6D8432D795EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4337830D-AA87-4255-AC61-6D8432D795EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8787D566-A794-444B-A605-696D34765888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8787D566-A794-444B-A605-696D34765888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8787D566-A794-444B-A605-696D34765888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8787D566-A794-444B-A605-696D34765888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1300AB-9585-4F97-B93F-40F69E06D8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1300AB-9585-4F97-B93F-40F69E06D8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1300AB-9585-4F97-B93F-40F69E06D8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1300AB-9585-4F97-B93F-40F69E06D8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
