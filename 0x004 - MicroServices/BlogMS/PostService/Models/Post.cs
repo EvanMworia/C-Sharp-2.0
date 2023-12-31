@@ -9,17 +9,18 @@ namespace PostService.Models
         public Guid PostId { get; set; }
 
         //Later on Might include photo associated with post here, instead of Subject
+        [Required]
         public string Subject { get; set; } = string.Empty;
-
+        [Required]
         public string Content { get; set; } = string.Empty;
 
-        [Required]
-        public UserDeets? PostOwner { get; set; }
+        public string UserName { get; set; } = string.Empty;
+
+
+        //public UserDeets? PostOwner { get; set; }
         //if not related to the post owner in this way then remember to change and use correct reference, 
         //reference in question is how to get postOwners username from post
-            
-
-
+   
 
     }
 }

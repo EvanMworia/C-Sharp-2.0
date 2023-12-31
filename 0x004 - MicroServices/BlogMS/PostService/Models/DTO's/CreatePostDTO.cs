@@ -9,8 +9,8 @@ namespace PostService.Models.DTO_s
 
         public string Content { get; set; } = string.Empty;
 
-        //Inquire if i should relate them this way or just the other way (commented below)
-        public UserDeets? PostOwner { get; set; }
-        //public string UserName { get; set; } = string.Empty;
+
+        //public UserDeets? PostOwner { get; set; }
+        public string UserName { get; set; } = string.Empty;
     }
 }

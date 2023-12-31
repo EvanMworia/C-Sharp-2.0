@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PostService.Data;
 using PostService.Models;
 using PostService.Models.DTO_s;
@@ -10,12 +11,12 @@ namespace PostService.Services
     {
         private readonly ApplicationDbContext _context;
         
+        
 
         public PostServices(ApplicationDbContext context)
         {
             _context = context;
             
-
         }
         public async Task<string> CreatePost(Post createPost)
         {
@@ -24,12 +25,21 @@ namespace PostService.Services
             return "Post Created";
         }
 
-        public async  Task<string> DeletePost(Post postId)
+        public async  Task<string> DeletePost(Guid postId)
         {
-             _context.Posts.Remove(postId);
+             _context.Posts.Where(x => x.PostId == postId).ExecuteDelete();
             await _context.SaveChangesAsync();
             return "Post Removed";
         }
+
+        public async Task<Post> GetPostById(Guid postId)
+        {
+
+
+            return await _context.Posts.Where(x => x.PostId == postId).FirstOrDefaultAsync();
+            
+        }
+
         public async Task<string> UpdatePost()
         {
             

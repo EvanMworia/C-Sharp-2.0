@@ -1,7 +1,10 @@
+using Auth_Service.Data;
+using Auth_Service.Models;
+using Auth_Service.Services;
+using Auth_Service.Services.IServices;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PostService.Data;
-using PostService.Services;
-using PostService.Services.IService;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,18 +15,26 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-//Register the database connection
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//Create/Connect to db
+builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("myConnString"));
 });
 
-//Register services for dependency injection
-builder.Services.AddScoped<IPosts, PostServices>();
+//configure identity framework
+builder.Services.AddIdentity<BlogUser, IdentityRole>().AddEntityFrameworkStores<DataContext>();
 
-//register AutoMapper
+
+
+
+
+//Add AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+//Our Services
+builder.Services.AddScoped<IUser, UserServices>();
+
+
 
 var app = builder.Build();
 
