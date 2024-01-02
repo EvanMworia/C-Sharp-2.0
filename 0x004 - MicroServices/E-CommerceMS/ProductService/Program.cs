@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProductService.Data;
+using ProductService.Services;
+using ProductService.Services.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 //      <---- Register Our services for Dependency Injection---->
 
-builder.Services.AddScoped<IProduct, ProductServices>();
+builder.Services.AddScoped<IProduct, ProductSVC>();
 
 //      <---- Register Our AutoMapper ---->
 

@@ -1,4 +1,6 @@
-﻿using ProductService.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductService.Data;
+using ProductService.Models;
 using ProductService.Models.DTOs;
 using ProductService.Services.IServices;
 
@@ -6,29 +8,39 @@ namespace ProductService.Services
 {
     public class ProductSVC : IProduct
     {
-        Task<string> IProduct.AddNewProduct(Product newProduct)
+        private readonly ApplicationDbContext _context;
+        public ProductSVC(ApplicationDbContext Context)
         {
-            throw new NotImplementedException();
+               _context = Context;
+        }
+        public async Task<string> AddNewProduct(Product newProduct)
+        {
+            _context.Products.Add(newProduct);
+            await _context.SaveChangesAsync();
+            return "PRODUCT HAS BEEN ADDED SUCCESFULLY";
         }
 
-        Task<string> IProduct.DeleteProduct(ProductDTO product)
+        public async Task<string> DeleteProduct(Product product)
         {
-            throw new NotImplementedException();
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return "PRODUCT HAS BEEN DELETED";
         }
 
-        Task<Product> IProduct.GetProductById(Guid ProductId)
+        public async Task<Product> GetProductById(Guid ProductId)
         {
-            throw new NotImplementedException();
+            return  await _context.Products.Where(x => x.ProductId == ProductId).FirstOrDefaultAsync();
         }
 
-        Task<ProductDTO> IProduct.SearchForProductByName(GetProductDTO productName)
+        public async Task<Product> SearchForProductByName(string productName)
         {
-            throw new NotImplementedException();
+            return await _context.Products.Where(x => x.Name == productName).FirstOrDefaultAsync();
         }
 
-        Task<string> IProduct.UpdateProduct()
+        public async Task<string> UpdateProduct()
         {
-            throw new NotImplementedException();
+            await _context.SaveChangesAsync();
+            return "UPDATES HAVE BEEN APPLIED SUCCESSFULLY";
         }
     }
 }
