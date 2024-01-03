@@ -27,6 +27,7 @@ namespace Auth_Service.Controllers
             if (string.IsNullOrWhiteSpace(result))
             {
                 _response.Result = "User Registered Successfully";
+                // ADD message to queue
                 return Created("", _response);
             }
 

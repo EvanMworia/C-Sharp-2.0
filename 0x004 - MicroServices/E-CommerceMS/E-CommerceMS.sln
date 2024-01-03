@@ -5,22 +5,24 @@ VisualStudioVersion = 17.9.34310.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth_Service", "Auth_Service\Auth_Service.csproj", "{82A70C7C-0D3C-43B2-8724-5F903C4E16E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService", "ProductService\ProductService.csproj", "{4337830D-AA87-4255-AC61-6D8432D795EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductService", "ProductService\ProductService.csproj", "{4337830D-AA87-4255-AC61-6D8432D795EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartService", "CartService\CartService.csproj", "{8787D566-A794-444B-A605-696D34765888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartService", "CartService\CartService.csproj", "{8787D566-A794-444B-A605-696D34765888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderService\OrderService.csproj", "{9C1300AB-9585-4F97-B93F-40F69E06D8ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService", "OrderService\OrderService.csproj", "{9C1300AB-9585-4F97-B93F-40F69E06D8ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouponService", "CouponService\CouponService.csproj", "{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouponService", "CouponService\CouponService.csproj", "{45B2E3CF-3AEE-450C-8871-68E8C67AE68D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RewardsService", "RewardsService\RewardsService.csproj", "{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RewardsService", "RewardsService\RewardsService.csproj", "{C62AD143-C5AB-443B-A7AB-E43B4E0AAFE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "EmailService\EmailService.csproj", "{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CCAA257D-875A-4D90-8AAB-8C80F5AF6C91}"
 	ProjectSection(SolutionItems) = preProject
 		rememberTo.txt = rememberTo.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceMessageBus", "ECommerceMessageBus\ECommerceMessageBus.csproj", "{3AD8539A-EE76-4002-B96D-9987D32CCA3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F88F284-E8EE-46D9-B6FC-D3DECA1AA728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD8539A-EE76-4002-B96D-9987D32CCA3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD8539A-EE76-4002-B96D-9987D32CCA3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD8539A-EE76-4002-B96D-9987D32CCA3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD8539A-EE76-4002-B96D-9987D32CCA3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

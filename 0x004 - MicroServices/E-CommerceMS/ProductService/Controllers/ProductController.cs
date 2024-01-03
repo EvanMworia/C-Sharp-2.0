@@ -13,5 +13,18 @@ namespace ProductService.Controllers
         private readonly IProduct _product;
         private readonly IMapper _mapper;
         private readonly ResponseDTO _response;
+        public ProductController(IProduct product, IMapper mapper)
+        {
+            _mapper = mapper;
+            _product = product;
+            _response = new ResponseDTO();
+        }
+
+        [HttpPost]
+        public Task<ActionResult<ResponseDTO>> AddProduct(AddProductDTO addProductDTO)
+        {
+
+        }
     }
+
 }
