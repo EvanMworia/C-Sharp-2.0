@@ -1,0 +1,57 @@
+﻿@page "/"
+
+@if (memories.Count==0)
+{
+    <h1>No Memories Added Yet, Think G Think</h1>
+}
+else
+{
+    <div class="row">
+        @foreach (var memory in memories)
+        {
+
+            <div class="card shadow col-4 p-4" style="width: 18rem;">
+                <img src="@memory.Image" class="card-img-top" alt="@memory.MemoryName" />
+                <div class="card-body">
+                    <h5 class="card-title">@memory.MemoryName</h5>
+                    <h7>@memory.Description</h7>
+                    <div class="d-flex justify-content-between">
+                        <span>
+                            @memory.Date
+                        </span>
+                        <span>
+                            @memory.Location
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+}
+
+
+
+@code{
+    public List<Memory> memories = new List<Memory>()
+    {
+        new Memory
+        {
+            MemoryName ="First time seeing the ocean",
+            Description="A memory about the first time i ever got to see the ocean in person and realised that the water was bloody saline af",
+            Location="Mombasa, Kenya",
+            Date= "August 10, 2018",
+            Image="https://cdn.pixabay.com/photo/2016/10/18/21/22/beach-1751455_640.jpg"
+
+        },
+        new Memory
+        {
+            MemoryName ="First Tech BootCamp",
+            Description="A time i got to learn with and from talented devs ",
+            Location="Nyeri, Kenya",
+            Date= "November 14, 2023",
+            Image="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg"
+        }
+    };
+}

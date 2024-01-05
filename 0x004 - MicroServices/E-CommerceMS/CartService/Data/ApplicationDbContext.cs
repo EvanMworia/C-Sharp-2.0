@@ -9,7 +9,7 @@ namespace CartService.Data
         {
 
         }
-
+        public DbSet<>
        
     }
 }
