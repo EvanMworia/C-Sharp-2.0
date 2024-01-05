@@ -1,4 +1,38 @@
 ﻿@page "/"
+<div class="row col-4">
+    <img src="@(string.IsNullOrWhiteSpace(memory.Image)?
+"https://cdn.pixabay.com/photo/2022/01/28/11/30/brain-6974397_640.png":memory.Image)" />
+</div>
+
+<div class="row col-6 d-flex flex-row">
+    <h1> Add New Memory</h1>
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" @bind-value="memory.MemoryName" id="Name" placeholder="Memory Name">
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input type="text" class="form-control" @bind-value="memory.Description" id="Description" placeholder="Memory Description">
+    </div>
+
+    <div class="form-group">
+        <label for="Image">Date</label>
+        <input type="text" class="form-control" @bind-value="memory.Date" id="Date" placeholder="Memory Date">
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Location</label>
+        <input type="text" class="form-control" @bind-value="memory.Location" id="Location" placeholder="Memory Location">
+    </div>
+
+    <div class="form-group">
+        <label for="Image">Image</label>
+        <input type="text" class="form-control" @bind-value="memory.Image" id="Image" placeholder="Memory Image">
+    </div>
+
+    <button @onclick="addNewMemory" class="mt-4 btn btn-primary">Create Memory</button>
+</div>
 
 @if (memories.Count==0)
 {
@@ -15,13 +49,19 @@ else
                 <div class="card-body">
                     <h5 class="card-title">@memory.MemoryName</h5>
                     <h7>@memory.Description</h7>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column justify-content-between">
                         <span>
                             @memory.Date
                         </span>
                         <span>
                             @memory.Location
                         </span>
+                        <div class="d-flex flex-row gap-2"> 
+                            <button type="button" class="btn btn-danger m-2">Delete Memory</button>
+                        
+                            <button type="button" class="btn btn-success m-2">Edit Memory</button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -34,6 +74,22 @@ else
 
 
 @code{
+
+
+    public Memory memory { get; set; } = new Memory();
+
+    [Parameter]
+    public EventCallback<Memory> OnAddMemory { get; set; }
+
+    public async Task addNewMemory()
+    {
+        await OnAddMemory.InvokeAsync(memory);
+    }
+
+
+
+
+
     public List<Memory> memories = new List<Memory>()
     {
         new Memory
