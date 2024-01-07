@@ -1,4 +1,4 @@
-using BlazorApp1.Components;
+using WorkoutDiary.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
