@@ -1,7 +1,94 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Weekly Routine</PageTitle>
+@if (days.Count==0)
+{
+    <h1>Sorry No Workouts Planned</h1>
+}
+else
+{
+    
 
-<h1>Hello, world!</h1>
+@* <div class="d-flex justify-content-center align-items-center"> *@
 
-Welcome to your new app.
+    <div class="row d-flex flex-row gap-4  ">
+        <h1 class="align-content-center">Weekly Workout Routine</h1>
+        @foreach (var day in days)
+        {
+            <div class="card shadow col-4 p-4 " style="width: 18rem;">
+                <img src="@day.Image" class="card-img-top" alt="@day.Day" />
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h2 class="card-title">@day.Day</h2>
+                    <h7>@day.MuscleGroup</h7>
+                    <div class="d-flex flex-row justify-content-center">
+                      @*   <span>
+                            @day.Day
+                        </span> *@
+                       @*  <span>
+                            @memory.Location
+                        </span> *@
+
+                    </div>
+                </div>
+                <div class="d-flex flex-row gap-2">
+                    <button type="button" class="btn btn-primary btn-outline-light btn-sm m-7">Get Workout</button>
+
+                    <button type="button" class="btn btn-secondary btn-outline-light btn-sm m-7">Edit Workout</button>
+                </div>
+            </div>
+
+        }
+    </div>
+@* </div> *@
+}
+@code{
+    public GymDay gymDay { get; set; } = new GymDay();
+    public List<GymDay> days = new List<GymDay>()
+    {
+        new GymDay
+        {
+            Day = "Monday",
+            MuscleGroup= "V-Taper Back",
+            Image ="https://cdn.pixabay.com/photo/2020/04/25/00/19/home-workout-5089047_640.jpg"
+        },
+        new GymDay
+        {
+            Day = "Tuesday",
+            MuscleGroup= "Deep Squats = Big Quads",
+            Image ="https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839087_640.jpg"
+        },
+        new GymDay
+        {
+            Day = "Wednesday",
+            MuscleGroup= "It's Not A Small Vest, It's a Big Chest",
+            Image ="https://cdn.pixabay.com/photo/2020/04/25/00/19/home-workout-5089047_640.jpg"
+        },
+        new GymDay
+        {
+            Day = "Thursday",
+            MuscleGroup= "throwBACK Thursdays",
+            Image ="https://cdn.pixabay.com/photo/2020/04/25/00/19/home-workout-5089047_640.jpg"
+        },
+        new GymDay
+        {
+            Day = "Friday",
+            MuscleGroup= "Deltoids On Steroids",
+            Image ="https://cdn.pixabay.com/photo/2020/05/11/22/38/muscle-5160485_640.jpg"
+        },
+        new GymDay
+        {
+            Day = "Saturday",
+            MuscleGroup= "Leg 2.0",
+            Image ="https://cdn.pixabay.com/photo/2020/04/25/00/19/home-workout-5089047_640.jpg"
+        },
+        new GymDay
+        {
+            Day = "SunDay",
+            MuscleGroup= "Touch Some Grass FFS",
+            Image ="https://cdn.pixabay.com/photo/2020/04/25/00/19/home-workout-5089047_640.jpg"
+        }
+
+
+    };
+
+}
