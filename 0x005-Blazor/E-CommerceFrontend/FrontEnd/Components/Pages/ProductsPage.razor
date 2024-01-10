@@ -1,5 +1,75 @@
 ﻿@page "/Products"
+@page "/"
+<PageTitle>Products</PageTitle>
 
+@if (newProducts.Count == 0)
+{
+    <h1>Sorry No Workouts Planned</h1>
+}
+else
+{
+
+
+    @* <div class="d-flex justify-content-center align-items-center"> *@
+
+    <div class="row d-flex flex-row gap-4  ">
+        <h1 class="align-content-center">Top Deals</h1>
+        <div>
+            
+            <InputText @bind-Value="product.Name" class="form-control"></InputText>
+        </div>
+        @foreach (var product in newProducts)
+        {
+            <div class="card shadow col-4 p-4 " style="width: 18rem;">
+                <img src="@product.Image" class="card-img-top" alt="@product.Name" />
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h2 class="card-title">@product.Name</h2>
+                    <h7>@product.Description</h7>
+                    <h7>@product.UnitPrice</h7>
+                    <div class="d-flex flex-row justify-content-center">
+                        @*   <span>
+                @day.Day
+                </span> *@
+                        @*  <span>
+                @memory.Location
+                </span> *@
+
+                    </div>
+                </div>
+                <div class="d-flex flex-row gap-2">
+                    <button type="button" class="btn btn-primary btn-outline-light btn-sm m-7">Get Workout</button>
+
+                    <button type="button" class="btn btn-secondary btn-outline-light btn-sm m-7">Edit Workout</button>
+                </div>
+            </div>
+
+        }
+    </div>
+    @* </div> *@
+}
 @code {
+    public Products product = new Products();
+
+    public List<Products> newProducts = new List<Products>()
+    {
+        new Products
+        {
+            Name="HyperX Headphones",
+            Description="The HyperX Cloud II was built to be an ultra-comfortable gaming headset with amazing sound.",
+            UnitPrice=4500,
+            Image ="https://imgs.search.brave.com/wuUlhFsBKis1cpZUO95MboFqwTcb87pfMh92bb6QYMU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFpK1Fic2hBRkwu/anBn"
+        },
+        new Products
+        {
+            Name="LG Monitor",
+            Description="Work efficiently with the OptiPlex™ 3010 desktop, featuring essential performance, flexibility and connectivity to help your organization succeed.",
+            UnitPrice=18500,
+            Image ="https://imgs.search.brave.com/3Yg49VF9en8w_rBb7LYKGpcE8E6g1JaD1oSMFwQv9Us/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jMS5u/ZXdlZ2dpbWFnZXMu/Y29tL1Byb2R1Y3RJ/bWFnZS8yNC0wMjYt/MDk5LVYwMS5qcGc"
+        },
+       
+
+
+    };
 
 }
+
