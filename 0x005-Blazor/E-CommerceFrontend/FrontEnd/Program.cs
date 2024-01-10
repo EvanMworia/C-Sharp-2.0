@@ -1,4 +1,4 @@
-using E_CommerceFrontend.Components;
+using FrontEnd.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

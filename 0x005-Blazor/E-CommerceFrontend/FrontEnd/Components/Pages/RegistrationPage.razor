@@ -1,0 +1,47 @@
+﻿@page "/Registration"
+
+<PageTitle>Register</PageTitle>
+
+<div class="d-flex align-items-center justify-content-center text-lg-center text-decoration-underline">
+    <h1>Create a BuyBye! Account <br />Register</h1>
+</div>
+
+<div class="d-flex align-items-center justify-content-center mt-5 ">
+    <EditForm Model="@user" OnValidSubmit="RegistrationSuccess">
+        <DataAnnotationsValidator />
+
+        <label> User Name</label>
+        <InputText @bind-Value="user.UserName" class="form-control"></InputText>
+        <ValidationMessage For="@(()=>user.UserName)" />
+        <br /><br />
+        <label>Email Address</label>
+        <InputText @bind-Value="user.EmailAddress" class="form-control"></InputText>
+        <ValidationMessage For="@(()=>user.EmailAddress)" />
+        <br /><br />
+        <label> Password</label>
+        <InputText @bind-Value="user.Password" class="form-control"></InputText>
+        <ValidationMessage For="@(()=>user.Password)" />
+        <br /><br />
+        <div class="d-flex align-items-center justify-content-center text-lg-center">
+            <button type="submit" class=" btn btn-primary btn-outline-light btn-sm m-7">Register</button>
+        </div>
+
+    </EditForm>
+</div>
+
+
+@* <div class="d-flex align-items-center justify-content-center text-lg-center mt-5">
+Don't have an account yet? <a href="/Register">Sign up</a>
+</div>
+ *@
+
+@code {
+    public RegisterUser user = new RegisterUser();
+
+    public void RegistrationSuccess()
+    {
+       Console.WriteLine(user.UserName); 
+       Console.WriteLine(user.EmailAddress);
+    }
+}
+

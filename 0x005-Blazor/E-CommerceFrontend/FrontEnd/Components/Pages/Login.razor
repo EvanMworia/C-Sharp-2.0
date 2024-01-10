@@ -1,0 +1,50 @@
+﻿@page "/"
+
+
+<PageTitle>Log in</PageTitle>
+
+<div class="d-flex align-items-center justify-content-center text-lg-center text-decoration-underline">
+    <h1>Welcome to BuyBye! <br />Log in</h1>
+</div>
+
+<div class="d-flex align-items-center justify-content-center mt-5 ">
+    <EditForm Model="@logIn" OnValidSubmit="LogIn">
+        <DataAnnotationsValidator />
+        
+        <label> User Name</label>
+        <InputText @bind-Value="logIn.UserName" class="form-control"></InputText>
+        <ValidationMessage For="@(()=>logIn.UserName)" />
+        <br /><br />
+        <label> Password</label>
+        <InputText @bind-Value="logIn.Password" class="form-control"></InputText>
+        <ValidationMessage For="@(()=>logIn.Password)" />
+        <br /><br />
+        <div class="d-flex align-items-center justify-content-center text-lg-center">
+        <button type="submit" class=" btn btn-primary btn-outline-light btn-sm m-7">Log In</button>
+        </div>
+
+    </EditForm>
+</div>
+
+
+ <div class="d-flex align-items-center justify-content-center text-lg-center mt-5">
+    Don't have an account yet? <a href="/Registration">Sign up</a>
+</div>
+
+
+@code {
+
+
+  
+    public LogInUser logIn = new LogInUser(); 
+
+    
+
+    private void LogIn()
+    {
+
+        Console.WriteLine(logIn.UserName);
+        Console.WriteLine(logIn.Password);
+       
+    }
+}
