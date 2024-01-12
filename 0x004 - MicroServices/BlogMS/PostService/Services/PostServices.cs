@@ -32,6 +32,11 @@ namespace PostService.Services
             return "Post Removed";
         }
 
+        public async Task<List<Post>> GetAllPosts()
+        {
+            return await _context.Posts.ToListAsync();
+        }
+
         public async Task<Post> GetPostById(Guid postId)
         {
 

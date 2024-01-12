@@ -59,6 +59,17 @@ namespace PostService.Controllers
             return Ok("Post Deleted");
 
         }
+        [HttpGet("{GetAllPosts}")]
+        public async Task<ActionResult<List<Post>>> GetAllPosts()
+        {
+           var allPosts = await _posts.GetAllPosts();
+            if (allPosts == null)
+            {
+                _response.ErrorMessage = "No Posts were found";
+            }
+            return allPosts;
+            
+        }
 
     }
 }

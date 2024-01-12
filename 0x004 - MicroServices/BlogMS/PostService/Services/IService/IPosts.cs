@@ -9,5 +9,6 @@ namespace PostService.Services.IService
         Task<string> DeletePost(Guid postId);
         Task<string> UpdatePost();
         public Task<Post> GetPostById(Guid postId);
+        public Task<List<Post>> GetAllPosts();
     }
 }
