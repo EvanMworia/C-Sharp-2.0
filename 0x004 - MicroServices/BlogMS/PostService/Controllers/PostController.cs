@@ -65,7 +65,7 @@ namespace PostService.Controllers
            var allPosts = await _posts.GetAllPosts();
             if (allPosts == null)
             {
-                _response.ErrorMessage = "No Posts were found";
+                return NotFound(_response.ErrorMessage = "No Posts were found");
             }
             return allPosts;
             

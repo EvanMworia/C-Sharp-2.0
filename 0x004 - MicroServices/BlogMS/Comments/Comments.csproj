@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Model\DTOs\" />
     <Folder Include="Profiles\" />
     <Folder Include="Services\IServices\" />
   </ItemGroup>
