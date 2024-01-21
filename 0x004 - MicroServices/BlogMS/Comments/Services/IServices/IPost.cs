@@ -4,6 +4,6 @@ namespace Comments.Services.IServices
 {
     public interface IPost
     {
-        public PostDTO GetPostById(Guid PostId);
+        public Task<PostDTO> GetPostById(Guid PostId);
     }
 }

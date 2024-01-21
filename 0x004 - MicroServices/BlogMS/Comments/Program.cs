@@ -28,6 +28,8 @@ builder.Services.AddScoped<IPost, PostService>();
 builder.Services.AddScoped<IComments, CommentsServices>();
 
 
+//register AutoMappper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 

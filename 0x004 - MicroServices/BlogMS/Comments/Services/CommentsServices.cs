@@ -23,14 +23,16 @@ namespace Comments.Services
             return "Comment added";
         }
 
-        public Task<List<Comment>> GetCommentsFromPost(Guid PostId)
+        public async Task<List<Comment>> GetCommentsFromPost(Guid PostId)
         {
-            throw new NotImplementedException();
+           var commentsList = await _context.Comments.Where(x=>x.PostId == PostId).ToListAsync();
+            return commentsList;
         }
 
-        public Task<Comment> GetSingleComment(Guid CommentId)
+        public async Task<Comment> GetSingleComment(Guid CommentId)
         {
-            throw new NotImplementedException();
+           var comment = await _context.Comments.Where(x=>x.CommentId== CommentId).FirstOrDefaultAsync();
+            return comment;
         }
 
         public async Task<string> RemoveComment(Guid CommentId)
